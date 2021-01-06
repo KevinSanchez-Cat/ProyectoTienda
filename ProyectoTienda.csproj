@@ -345,6 +345,7 @@
     <Content Include="Views\Shared\_Layout Producion.cshtml" />
     <Content Include="Views\Shared\_Layout´Paquteria.cshtml" />
     <Content Include="Views\Shared\_LayoutEnvios.cshtml" />
+    <Content Include="Views\Catalogo\BuscaProd.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

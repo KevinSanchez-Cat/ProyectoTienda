@@ -1,0 +1,28 @@
+﻿@using ProyectoTienda.Models
+@{
+    ViewBag.Title = "BuscaProd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Productos relacionados a @ViewBag.SearchKey</h3>
+<table cellpadding="2" cellspacing="2" border="1">
+    <tr>
+        <th>Nombre del producto</th>
+        <th>Imagen</th>
+        <th>Precio</th>
+        <th>Comprar</th>
+
+    </tr>
+    @foreach (Producto producto in ViewBag.Listado)
+    {
+        <tr>
+            <td>@producto.nombre_producto</td>
+            <td><img src="~/Content/Imagenes/Productos/@producto.imagen_producto" width="60"</td>
+            <td>@producto.precio</td>
+            <td align="center"><a href="@Url.Action("Comprar","Carro",new { id=producto.Id_producto})"</td>
+
+        </tr>
+    }
+
+
+</table>

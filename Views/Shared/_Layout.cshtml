@@ -63,12 +63,16 @@
         </div>
 
         <div style="display: inline-block;">
+
+            @using (Html.BeginForm("BuscaProd", "Catalogo", FormMethod.Post, new { @Class = "form-line" }))
+            {
             <form style="float:right; margin-right: 10px; margin-top:20px" class="form-inline mt-2 mt-md-0 container-fluid">
-                <input class="form-control mr-sm-2" type="text" placeholder="Buscar producto" aria-label="Buscar producto">
+                <input id="nomBuscar" name="nomBuscar" class="form-control mr-sm-2" type="text" placeholder="Buscar producto" aria-label="Buscar producto">
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
                     <i class="fa fa-search" aria-hidden="true"></i> Buscar
                 </button>
             </form>
+            }
         </div>
 
     </header>
@@ -210,7 +214,7 @@
             <div class="container-fluid" style="background-color:#192537">
                 <div class="row">
                     <div class="col-12 col-md">
-                        <img src="~/Content/Imagenes/xd.png" width="147px" height="81px" alt="..." style="margin-right:10px">
+                        <img src="~/Content/Imagenes/xd.png" width="147" height="81" alt="..." style="margin-right:10px">
                         <small class="d-block mb-3 " style="color:rgb(161, 161, 161);">Corporation &copy; 2020</small>
                     </div>
                     <div class="col-6 col-md">
