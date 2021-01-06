@@ -10,7 +10,8 @@ namespace ProyectoTienda.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("Index","Empleado");
+            //return RedirectToAction("Index","Empleado");
+            return View();
         }
 
         public ActionResult About()
