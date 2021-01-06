@@ -340,6 +340,11 @@
     <Content Include="Views\Catalogo\Catalogo.cshtml" />
     <Content Include="Views\Tienda\Tienda.cshtml" />
     <Content Include="Views\Productos\Productos.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdministrador.cshtml" />
+    <Content Include="Views\Shared\_LayoutCompras.cshtml" />
+    <Content Include="Views\Shared\_Layout Producion.cshtml" />
+    <Content Include="Views\Shared\_Layout´Paquteria.cshtml" />
+    <Content Include="Views\Shared\_LayoutEnvios.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
