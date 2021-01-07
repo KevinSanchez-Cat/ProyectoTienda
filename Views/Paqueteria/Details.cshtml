@@ -1,0 +1,74 @@
+﻿@model ProyectoTienda.Models.Paqueteria
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Paqueteria</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_paqueteria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_paqueteria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sitio_web)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sitio_web)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rfc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rfc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contacto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contacto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono_contacto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono_contacto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion.estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_paqueteria }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

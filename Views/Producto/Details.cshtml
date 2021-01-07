@@ -1,0 +1,114 @@
+﻿@model ProyectoTienda.Models.Producto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Producto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion_producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion_producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.coste)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.coste)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imagen_producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imagen_producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ultima_actualizacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ultima_actualizacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clave_unica)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clave_unica)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria.nombre_categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.nombre_categoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Galeria.nombre_galeria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Galeria.nombre_galeria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marca.nombre_marca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marca.nombre_marca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producto2.nombre_producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto2.nombre_producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.nombre_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.nombre_usuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_producto }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

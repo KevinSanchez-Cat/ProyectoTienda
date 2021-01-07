@@ -1,0 +1,98 @@
+﻿@model ProyectoTienda.Models.Cliente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido_p)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido_p)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido_m)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido_m)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contrasenia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contrasenia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarjeta.numTarjeta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tarjeta.numTarjeta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.nombre_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.nombre_usuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_cliente }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
