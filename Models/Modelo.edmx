@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TIENDAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TIENDAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="id_categoria" />
@@ -27,6 +27,8 @@
           <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="id_tarjeta" Type="int" />
           <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="nombre_usuario" Type="nvarchar" MaxLength="50" />
+          <Property Name="contrasenia" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Compra">
           <Key>
@@ -83,13 +85,16 @@ advertencia 6002: La tabla o vista 'TIENDA.dbo.Detalle_compra' no tiene definida
           <Property Name="fecha_nac" Type="date" Nullable="false" />
           <Property Name="estatus" Type="nvarchar" MaxLength="45" Nullable="false" />
           <Property Name="salario" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
           <Property Name="telefono" Type="nchar" MaxLength="12" />
           <Property Name="id_direccion" Type="int" Nullable="false" />
           <Property Name="id_departamento" Type="int" Nullable="false" />
           <Property Name="id_puesto" Type="int" Nullable="false" />
           <Property Name="id_usuario" Type="int" Nullable="false" />
           <Property Name="rfc" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="rol" Type="nvarchar" MaxLength="50" />
+          <Property Name="nombre_usuario" Type="nvarchar" MaxLength="50" />
+          <Property Name="contrasenia" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Galeria">
           <Key>
@@ -345,18 +350,6 @@ advertencia 6002: La tabla o vista 'TIENDA.dbo.ProductoTienda' no tiene definida
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Empleado__id_usu__1332DBDC">
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
-          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Usuario">
-              <PropertyRef Name="Id_usuario" />
-            </Principal>
-            <Dependent Role="Empleado">
-              <PropertyRef Name="id_usuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Inventari__Id_pr__339FAB6E">
           <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
           <End Role="Inventario" Type="Self.Inventario" Multiplicity="*" />
@@ -597,10 +590,6 @@ advertencia 6002: La tabla o vista 'TIENDA.dbo.ProductoTienda' no tiene definida
             <End Role="Puesto" EntitySet="Puesto" />
             <End Role="Empleado" EntitySet="Empleado" />
           </AssociationSet>
-          <AssociationSet Name="FK__Empleado__id_usu__1332DBDC" Association="Self.FK__Empleado__id_usu__1332DBDC">
-            <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="Empleado" EntitySet="Empleado" />
-          </AssociationSet>
           <AssociationSet Name="FK__Inventari__Id_pr__339FAB6E" Association="Self.FK__Inventari__Id_pr__339FAB6E">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="Inventario" EntitySet="Inventario" />
@@ -654,8 +643,7 @@ advertencia 6002: La tabla o vista 'TIENDA.dbo.ProductoTienda' no tiene definida
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TIENDAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -688,6 +676,8 @@ advertencia 6002: La tabla o vista 'TIENDA.dbo.ProductoTienda' no tiene definida
           <NavigationProperty Name="Tarjeta" Relationship="Self.FK__Cliente__id_tarj__0C85DE4D" FromRole="Cliente" ToRole="Tarjeta" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK__Cliente__id_usua__0D7A0286" FromRole="Cliente" ToRole="Usuario" />
           <NavigationProperty Name="Compra" Relationship="Self.FK__Compra__id_clien__0F624AF8" FromRole="Cliente" ToRole="Compra" />
+          <Property Name="nombre_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contrasenia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Compra">
           <Key>
@@ -741,7 +731,7 @@ advertencia 6002: La tabla o vista 'TIENDA.dbo.ProductoTienda' no tiene definida
           <Property Name="fecha_nac" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="estatus" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="salario" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="telefono" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
           <Property Name="id_direccion" Type="Int32" Nullable="false" />
           <Property Name="id_departamento" Type="Int32" Nullable="false" />
@@ -752,6 +742,9 @@ advertencia 6002: La tabla o vista 'TIENDA.dbo.ProductoTienda' no tiene definida
           <NavigationProperty Name="Direccion" Relationship="Self.FK__Empleado__id_dir__10566F31" FromRole="Empleado" ToRole="Direccion" />
           <NavigationProperty Name="Puesto" Relationship="Self.FK__Empleado__id_pue__123EB7A3" FromRole="Empleado" ToRole="Puesto" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK__Empleado__id_usu__1332DBDC" FromRole="Empleado" ToRole="Usuario" />
+          <Property Name="rol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nombre_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contrasenia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Galeria">
           <Key>
@@ -1350,6 +1343,8 @@ advertencia 6002: La tabla o vista 'TIENDA.dbo.ProductoTienda' no tiene definida
           <EntitySetMapping Name="Cliente">
             <EntityTypeMapping TypeName="TIENDAModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+                <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
                 <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
                 <ScalarProperty Name="nombre_cliente" ColumnName="nombre_cliente" />
                 <ScalarProperty Name="apellido_p" ColumnName="apellido_p" />
@@ -1398,6 +1393,9 @@ advertencia 6002: La tabla o vista 'TIENDA.dbo.ProductoTienda' no tiene definida
           <EntitySetMapping Name="Empleado">
             <EntityTypeMapping TypeName="TIENDAModel.Empleado">
               <MappingFragment StoreEntitySet="Empleado">
+                <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+                <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+                <ScalarProperty Name="rol" ColumnName="rol" />
                 <ScalarProperty Name="Id_empleado" ColumnName="Id_empleado" />
                 <ScalarProperty Name="nombre_empleado" ColumnName="nombre_empleado" />
                 <ScalarProperty Name="apellido_p" ColumnName="apellido_p" />

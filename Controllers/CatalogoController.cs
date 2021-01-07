@@ -53,6 +53,8 @@ namespace ProyectoTienda.Controllers
                 mercancia = motoresE2;
                 ViewBag.cat = "Motores linea 2";
             }
+            ViewBag.productos = mercancia;
+            return View();
         }
 
     }

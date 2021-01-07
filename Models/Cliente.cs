@@ -29,6 +29,8 @@ namespace ProyectoTienda.Models
         public string email { get; set; }
         public Nullable<int> id_tarjeta { get; set; }
         public int id_usuario { get; set; }
+        public string nombre_usuario { get; set; }
+        public string contrasenia { get; set; }
     
         public virtual Direccion Direccion { get; set; }
         public virtual Tarjeta Tarjeta { get; set; }

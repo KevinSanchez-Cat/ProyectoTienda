@@ -28,6 +28,9 @@ namespace ProyectoTienda.Models
         public int id_puesto { get; set; }
         public int id_usuario { get; set; }
         public string rfc { get; set; }
+        public string rol { get; set; }
+        public string nombre_usuario { get; set; }
+        public string contrasenia { get; set; }
     
         public virtual Departamento Departamento { get; set; }
         public virtual Direccion Direccion { get; set; }

@@ -18,7 +18,29 @@
             <a href="#" class="btn btn-light">Compara ahora</a>
         </div>
     </div>
+    <h3 class="text-center"> seleccione alguna de las categorias haciendo clicl
+        <div class="row justify-content-md-between aling-items-center">
+            <div class="col-lg-1-md-3">
+                <div class="text-center">
+                    <a href="@Url.Action("prodCategoria","Catalogo",new { idCat=1,nombre="motores1"})">
+                        <h2>Motores</h2>
+                        <img src="~/Content/Imagenes/Transparente.svg" alt="" class="aling-items-center" />
+                    </a>
+                </div>
 
+            </div>
+            <div class="col-lg-1-md-3">
+                <div class="text-center">
+                    <a href="@Url.Action("prodCategoria","Catalogo",new { idCat=2,nombre="motores2"})">
+                        <h2>Motores</h2>
+                        <img src="~/Content/Imagenes/Transparente.svg" alt="" class="aling-items-center" />
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </h3>
 
 
 

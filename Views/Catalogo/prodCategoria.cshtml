@@ -1,0 +1,47 @@
+﻿@using ProyectoTienda.Models
+@{
+    ViewBag.Title = "prodCategoria";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.cat</h2>
+<div class="container">
+    <div class="col-xs-12 col-md-9">
+        <div class="row">
+            @foreach(Producto item in ViewBag.productos)
+            {
+            <div class="col-xs-12 col-md-3">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="~/Content/Imagenes/Transparente.svg" />
+                    <div class="caption" text-center>
+                        <p>
+                            <b>
+                                Nombre:
+                            </b>
+                            <span>
+                                @item.nombre_producto
+                            </span>
+                        </p>
+                        <p>
+                            <b>
+                                Precio:
+                            </b>
+                            <span>
+                                @item.precio
+                            </span>
+                        </p>
+                        <p class="text-center">
+                            @Html.ActionLink("Añadir al carrito", "Agregar","Carro", new{id=item.Id_producto},new { @class="btn btn-info"})
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            }
+        </div>
+
+    </div>
+</div>
