@@ -11,6 +11,7 @@ namespace ProyectoTienda.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Cliente
     {
@@ -21,12 +22,20 @@ namespace ProyectoTienda.Models
         }
     
         public int id_cliente { get; set; }
+        [Display(Name ="Nombre completo")]
+        [Required(ErrorMessage ="Debe ser mayor o menor")]
         public string nombre_cliente { get; set; }
+        [Display(Name = "Apellido Paterno")]
+
         public string apellido_p { get; set; }
+        [Display(Name = "Apellido Materno")]
         public string apellido_m { get; set; }
+
         public int id_direccion { get; set; }
+        [Display(Name = "Telefono")]
         public string telefono { get; set; }
         public string email { get; set; }
+        [Range(100000000000,9999999999999999, ErrorMessage ="debe ser entre 12 o 16")]
         public Nullable<int> id_tarjeta { get; set; }
         public int id_usuario { get; set; }
         public string nombre_usuario { get; set; }

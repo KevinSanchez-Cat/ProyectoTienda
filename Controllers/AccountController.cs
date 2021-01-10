@@ -173,11 +173,12 @@ namespace ProyectoTienda.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        Session["name"] = "";
+                        Session["correo"] = user.Email;
                     }
 
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Create", "Cliente");
                 }
                 AddErrors(result);
             }
