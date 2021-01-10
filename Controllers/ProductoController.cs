@@ -106,10 +106,30 @@ namespace ProyectoTienda.Controllers
             if (ModelState.IsValid)
             {
 
+                int id = producto.Id_producto;
+                var prod = db.Producto.Find(id);
+                decimal precio_ant = prod.precio;
+                decimal precio_act = producto.precio;
+                prod.nombre_producto = producto.nombre_producto;
+                prod.imagen_producto = producto.imagen_producto;
+                prod.descripcion_producto = producto.descripcion_producto;
+                prod.coste = producto.coste;
+                prod.id_categoria = producto.id_categoria;
+                prod.id_marca = producto.id_marca;
+                prod.id_producto_relacionado = prod.id_producto_relacionado;
+                prod.id_usuario = producto.id_usuario;
+                prod.clave_unica = producto.clave_unica;
+                prod.id_galeria = producto.id_galeria;
 
 
-
-                db.Entry(producto).State = EntityState.Modified;
+              //  db.Entry(producto).State = EntityState.Modified;
+              //  db.SaveChanges();
+                if (precio_act != precio_ant)
+                {
+                    DateTime hoy = DateTime.Now;
+                    prod.ultima_actualizacion = hoy;
+                    
+                }
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
