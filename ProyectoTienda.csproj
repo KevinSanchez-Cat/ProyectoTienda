@@ -173,6 +173,7 @@
     <Compile Include="Controllers\CarritoController.cs" />
     <Compile Include="Controllers\CatalogoController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\CompraController.cs" />
     <Compile Include="Controllers\DepartamentoController.cs" />
@@ -183,12 +184,10 @@
     <Compile Include="Controllers\GaleriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InventarioController.cs" />
-    <Compile Include="Controllers\Item.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MarcaController.cs" />
     <Compile Include="Controllers\Oden_clienteController.cs" />
     <Compile Include="Controllers\PaqueteriaController.cs" />
-    <Compile Include="Controllers\ProdCarro.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\ProductoTiendaController.cs" />
@@ -230,6 +229,7 @@
     <Compile Include="Models\Inventario.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\marca.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
@@ -255,6 +255,7 @@
     <Compile Include="Models\Paqueteria.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProdCarro.cs" />
     <Compile Include="Models\Producto.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
@@ -449,6 +450,7 @@
     <Content Include="Views\Tarjeta\Details.cshtml" />
     <Content Include="Views\Tarjeta\Edit.cshtml" />
     <Content Include="Views\Tarjeta\Index.cshtml" />
+    <Content Include="Views\Carrito\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -458,7 +460,8 @@
     <Folder Include="Content\Imagenes\Tarjetas\" />
     <Folder Include="Content\Imagenes\TiendaMotores\" />
     <Folder Include="Views\Administrador\" />
-    <Folder Include="Views\Carrito\" />
+    <Folder Include="Views\Carro\" />
+    <Folder Include="Views\Checkout\" />
     <Folder Include="Views\Compras\" />
     <Folder Include="Views\DepProduccion\" />
     <Folder Include="Views\Envios\" />

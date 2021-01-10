@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using ProyectoTienda.Models;
-namespace ProyectoTienda.Controllers
+
+namespace ProyectoTienda.Models
 {
     public class ProdCarro
     {
@@ -21,7 +21,7 @@ namespace ProyectoTienda.Controllers
         }
         public Producto find(int id)
         {
-            Producto pp = this.products.Single(p=>p.Id_producto.Equals(id));
+            Producto pp = this.products.Single(p => p.Id_producto.Equals(id));
             return pp;
         }
 
