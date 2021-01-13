@@ -50,8 +50,40 @@ namespace ProyectoTienda.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_cliente,nombre_cliente,apellido_p,apellido_m,id_direccion,telefono,email,id_tarjeta,id_usuario,nombre_usuario,contrasenia")] Cliente cliente)
+       // public ActionResult Create([Bind(Include = "id_cliente,nombre_cliente,apellido_p,apellido_m,id_direccion,telefono,email,id_tarjeta,id_usuario,nombre_usuario,contrasenia")] Cliente cliente)
+        public ActionResult Create(string nombre_cliente, string apellido_p, string apellido_m, string id_direccion,string telefono, string email, int id_tarjeta,int  id_usuario, string nombre_usuario, string contrasenia )
         {
+
+
+            Cliente cliente = new Cliente();
+
+            int id = 0;
+            if (!(db.Cliente.Max(c => (int?)c.id_cliente == null))){
+                id = db.Cliente.Max(c=>c.id_cliente);
+            }
+            else
+            {
+                id = 0;
+            }
+            id++;
+            /*
+             * if(Tarjeta(num_tarj_cred_ppal, tipoTarj,Mes, Anio, CVV){
+             * 
+             * if(validaPago(nombre,calle_t,colonia_t,estado_t, num_tarj_cred_ppal,Mes,Anio, CVV)){
+             * cliente.Id_cliente=id;
+             * cliente.nombre=nombre;
+             * cliente.email=Session["correo"].ToString();
+             * }
+             * 
+             * 
+             * }
+             * 
+             * 
+             * 
+             */
+
+
+
             if (ModelState.IsValid)
             {
                 db.Cliente.Add(cliente);
@@ -135,6 +167,16 @@ namespace ProyectoTienda.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult Invalida()
+        {
+            return View();
+        }
+        public ActionResult BorraUser()
+        {
+            string idUser = User.Identity.GetUserId();
+
+            return RedirectToAction("Delete", "Account", routeValues: new { id = idUser });
         }
     }
 }

@@ -451,6 +451,12 @@
     <Content Include="Views\Tarjeta\Edit.cshtml" />
     <Content Include="Views\Tarjeta\Index.cshtml" />
     <Content Include="Views\Carrito\Index.cshtml" />
+    <Content Include="Views\Cliente\Invalida.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial1.cshtml" />
+    <Content Include="Views\Checkout\CrearOrden.cshtml" />
+    <Content Include="Views\Checkout\PagoNoAceptado.cshtml" />
+    <Content Include="Views\Checkout\PagoAceptado.cshtml" />
+    <Content Include="Views\Checkout\PagoPayPal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -461,7 +467,6 @@
     <Folder Include="Content\Imagenes\TiendaMotores\" />
     <Folder Include="Views\Administrador\" />
     <Folder Include="Views\Carro\" />
-    <Folder Include="Views\Checkout\" />
     <Folder Include="Views\Compras\" />
     <Folder Include="Views\DepProduccion\" />
     <Folder Include="Views\Envios\" />

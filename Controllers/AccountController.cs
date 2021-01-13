@@ -437,6 +437,20 @@ namespace ProyectoTienda.Controllers
 
             base.Dispose(disposing);
         }
+        [HttpGet]
+        public async Task<ActionResult> Delete(string id)
+        {
+            if (ModelState.IsValid)
+            {
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+                }
+                var user = await UserManager.FindByIdAsync(id);
+                var result = await UserManager.DeleteAsync(user);
+            }
+            return RedirectToAction("Register");
+        }
 
         #region Aplicaciones auxiliares
         // Se usa para la protección XSRF al agregar inicios de sesión externos

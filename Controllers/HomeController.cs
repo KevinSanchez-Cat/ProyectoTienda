@@ -11,6 +11,11 @@ namespace ProyectoTienda.Controllers
         public ActionResult Index()
         {
             //return RedirectToAction("Index","Empleado");
+
+            if (Session["itemTotal"] == null)
+            {
+                Session["itemTotal"] = 0;
+            }
             return View();
         }
 
