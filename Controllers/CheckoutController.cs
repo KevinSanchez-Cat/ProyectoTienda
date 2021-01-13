@@ -38,13 +38,13 @@ namespace ProyectoTienda.Controllers
             Session["fechaOrden"] = fechCreacion;
             Session["fechaEntrga"] = fechaProbEntrega;
 //Identificar el numero de tarjeta
-            if (cliente.id_tarjeta.StartWith("4"){
+            if (cliente.id_tarjeta.StartWith("4")){
                 Session["tTarj"] = "1";
             }
-            if (cliente.id_tarjeta.StartWith("5"){
+            if (cliente.id_tarjeta.StartWith("5")){
                 Session["tTarj"] = "2";
             }
-            if (cliente.id_tarjeta.StartWith("3"){
+            if (cliente.id_tarjeta.StartWith("3")){
                 Session["tTarj"] = "3";
             }
             Session["nTarj"] = cliente.id_tarjeta;
