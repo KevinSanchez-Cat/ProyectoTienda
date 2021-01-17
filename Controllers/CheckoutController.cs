@@ -38,18 +38,18 @@ namespace ProyectoTienda.Controllers
             Session["fechaOrden"] = fechCreacion;
             Session["fechaEntrga"] = fechaProbEntrega;
 //Identificar el numero de tarjeta
-            if (cliente.id_tarjeta.StartWith("4")){
-                Session["tTarj"] = "1";
-            }
-            if (cliente.id_tarjeta.StartWith("5")){
-                Session["tTarj"] = "2";
-            }
-            if (cliente.id_tarjeta.StartWith("3")){
-                Session["tTarj"] = "3";
-            }
-            Session["nTarj"] = cliente.id_tarjeta;
+          // if (cliente.id_tarjeta.StartWith("4")){
+          //      Session["tTarj"] = "1";
+          //  }
+          //  if (cliente.id_tarjeta.StartWith("5")){
+          //      Session["tTarj"] = "2";
+          //  }
+          //  if (cliente.id_tarjeta.StartWith("3")){
+          //      Session["tTarj"] = "3";
+          //  }
+          //  Session["nTarj"] = cliente.id_tarjeta;
             return View();
-
+            
         }
         public ActionResult Pagar(string tipoPago)
         {
@@ -69,22 +69,22 @@ namespace ProyectoTienda.Controllers
                 }
                 else
                 {
-                    var dirEnt = (from d in db.Direccion
-                                  where d.id_cliente == cliente.id_cliente
-                                  select d).ToList().FirstOrDefault();
-                    int idDir = dirEnt.Id_dirEnt;
-                    return RedirectToAction("PagoAceptado", routeValues: new { idC = ideClient, idD = idDir });
+                  //  var dirEnt = (from d in db.Direccion
+                  //                where d.id_cliente == cliente.id_cliente
+                  //                select d).ToList().FirstOrDefault();
+                 //   int idDir = dirEnt.Id_dirEnt;
+                  //  return RedirectToAction("PagoAceptado", routeValues: new { idC = ideClient, idD = idDir });
                 }
             }
 
             if (tipoPago.Equals("P"))
             {
-                var dirEnt = (from d in db.Direccion
-                              where d.id_cliente==cliente.id_cliente
-                              select d).ToList().FistOrDefault();
-                int idDir = dirEnt.Id_dirEntr;
-                validaPago(cliente);
-                return RedirectToActionPermanent("PagoPayPal", routeValues: new { idC=ideClient, idD=idDir});
+             //   var dirEnt = (from d in db.Direccion
+             //                 where d.id_cliente==cliente.id_cliente
+             //                 select d).ToList().FistOrDefault();
+             //   int idDir = dirEnt.Id_dirEntr;
+             //   validaPago(cliente);
+             //   return RedirectToActionPermanent("PagoPayPal", routeValues: new { idC=ideClient, idD=idDir});
             }
             return View();
         }

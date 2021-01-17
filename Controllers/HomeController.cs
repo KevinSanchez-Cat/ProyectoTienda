@@ -17,7 +17,7 @@ namespace ProyectoTienda.Controllers
                 Session["itemTotal"] = 0;
             }
             // return View();
-            return RedirectToAction("Register","Account");
+            return RedirectToAction("Login","Account");
         }
 
         public ActionResult About()

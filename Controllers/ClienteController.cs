@@ -58,7 +58,7 @@ namespace ProyectoTienda.Controllers
             Cliente cliente = new Cliente();
 
             int id = 0;
-            if (!(db.Cliente.Max(c => (int?)c.id_cliente == null))){
+            if (!db.Cliente.Max(c => (int?)c.id_cliente == null)){
                 id = db.Cliente.Max(c=>c.id_cliente);
             }
             else

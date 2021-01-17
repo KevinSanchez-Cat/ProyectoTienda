@@ -166,12 +166,8 @@ namespace ProyectoTienda.Controllers
                     bool dominio = user.Email.ToString().Contains("@Bull.motors.com");
                     if(dominio)
                     {
-                   
-
                             string correo = model.Email;
                             return RedirectToAction("Index", "Usuario", routeValues: new { email = correo });
-
-                        
                     }
                     else
                     {
